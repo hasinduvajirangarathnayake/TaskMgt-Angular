@@ -1,0 +1,73 @@
+
+<div class="text-center" *ngIf="loading">
+<img src="assets/loading.gif" width="100" height="100" ></div>
+<div class="table-responsive" *ngIf="!loading">
+    <table class="rwd-table" id="myTable">
+   <tbody>
+     <tr>
+       <th></th>
+       <th>Task Name</th>
+       <th>Task asign date</th>
+       <th>Task end date</th>
+     </tr> 
+     <ng-container *ngFor="let TaskDetails  of tasklist; index as i">
+     <tr 
+     
+     *ngIf="TaskDetails.status === 'Not Complete'" style="background-color: rgba(255, 4, 4, 0.089)  "
+     >
+     <td> <input type="checkbox" 
+      
+      id="checkbox"
+      (click)="select(TaskDetails.id!,TaskDetails.taskname,TaskDetails.startdate,TaskDetails.completedate,TaskDetails.status  )"> </td>
+       <td  data-th="Task Name :">
+        {{ TaskDetails.taskname }}
+       </td>
+       <td data-th="Task asign date :">
+        {{ TaskDetails.startdate }}
+       </td>
+       <td data-th="Task end date">
+        {{ TaskDetails.completedate }}
+       </td>
+      
+
+  
+       
+       
+     </tr>
+     <tr 
+     
+     *ngIf="TaskDetails.status === 'Complete'" style="background-color: rgba(4, 255, 58, 0.329) "
+     >
+     <td> <input type="checkbox" id="checkbox"  (click)="select(TaskDetails.id!,TaskDetails.taskname,TaskDetails.startdate,TaskDetails.completedate ,TaskDetails.status )"> </td>
+       <td  data-th="Task Name :">
+        {{ TaskDetails.taskname }}
+       </td>
+       <td data-th="Task asign date :">
+        {{ TaskDetails.startdate }}
+       </td>
+       <td data-th="Task end date">
+        {{ TaskDetails.completedate }}
+       </td>
+     
+  
+       
+       
+     </tr>
+    
+    </ng-container>
+   </tbody>
+ </table>
+
+</div><br>
+<div class="col-sm-12" *ngIf="showbutton">
+
+  <strong>Task Name: </strong> <span *ngFor="let taskdetails of selectname; index as i " >{{ taskdetails  }} {{i === selectname.length -1 ? '' : ',&nbsp;' }}</span> <br><br>
+<div class="row">
+  <button *ngIf="selectTaskstatus==='Not Complete'"   (click)="update(updatelist)"  type="submit"  class="button-complete">Complete </button>
+  <button type="submit" (click)="deleteTask(deleteIds)" class="button-remove">Remove</button>
+</div>
+</div>
+<div>
+
+  
+</div>

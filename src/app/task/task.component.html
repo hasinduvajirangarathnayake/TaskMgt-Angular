@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+      Enter Task Details
+    </div>
+    <div class="card-body">
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm.value)">
+        <div class="col-sm-10">
+        <label for="taskname">&nbsp; Task  Details</label>
+
+        <input type="text" id="taskname" 
+        class="form-control form-rounded"
+        formControlName="taskname"
+        placeholder="Enter Task">
+        <div *ngIf="taskForm.get('taskname').errors['taskIsexits']"><br>
+        <span style="color: red;" >&nbsp;&nbsp;This task is already exits..!</span>
+      </div>
+      </div>
+  <br>
+    <div class="col-sm-10">
+        <label for="date">&nbsp; Task Complete Date</label>
+        <input type="date" id="date" 
+        formControlName="completedate"
+        class="form-control form-rounded" > 
+        
+    </div>
+    <br><br>
+    <div class="col-sm-10">
+        <button class="button-sub"   type="submit" [disabled]="taskForm.get('taskname').errors['taskIsexits']" >Submit </button>
+    </div>
+</form>
+    </div>
+   
+  </div>

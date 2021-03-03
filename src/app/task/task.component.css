@@ -1,0 +1,28 @@
+
+.form-rounded {
+    border-radius: 1rem;
+    }
+
+    .button-sub{
+        background: #305fff ;
+        border-radius: 100px;
+        padding: 7px 40px;
+        color: #fff ;
+        text-decoration: none;
+        font-size: 1.35em;
+        margin: 0 15px; 
+    }
+
+    .button-sub[disabled]{
+        background: rgba(154, 167, 209, 0.753) ;
+        border-radius: 100px;
+        padding: 7px 40px;
+        color: #fff ;
+        text-decoration: none;
+        font-size: 1.35em;
+        margin: 0 15px; 
+    }
+    input.ng-invalid.ng-touched {
+        border: 1px solid red;
+      }
+      

@@ -1,0 +1,28 @@
+<body>
+    
+
+<nav class="absolute-x-center">
+    <div class="wrapper absolute-center  flex-row-center justify-space-between">
+      <img src="assets/logo.png" height="70">
+      <ul class="absolute-x-center">
+        <li routerLinkActive="activeLink" 
+        [routerLinkActiveOptions]="{exact: true}"
+        ><a   routerLinkActive="activeLink"
+          routerLink="/task"
+          [routerLinkActiveOptions]="{exact: true}"
+          >Add Task</a></li>
+        <li routerLinkActive="activeLink"><a 
+          routerLinkActive="activeLink"
+          routerLink="/task/alltask"
+          >All Task</a></li>
+      </ul>
+     
+    </div>
+  </nav>
+</body>
+<div class="container" style="margin-top: 160px;">
+    <router-outlet></router-outlet>
+
+
+</div>
+
